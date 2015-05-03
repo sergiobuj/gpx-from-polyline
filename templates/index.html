@@ -1,0 +1,38 @@
+<!doctype html>
+<title>Polyline to GPX file</title>
+    <h2>Sample Polylines</h2>
+    <div>
+    <p>
+  egrwFpjubMNwEe@yBWqApAn@xEzBPFZJ`DXhHr@`DVLGL?bBN^qIDa@n@aBjCaHvF{Np@uBnAaDqFmEc@pAKT
+  </p>
+  <p>
+  _p~iF~ps|U_ulLnnqC_mqNvxq`@
+  </p>
+
+  <p>
+  gtawFdojaMWA_AQWu@G]Ac@@WJ_@T[RQVGV?\HXNb@b@LHXl@f@`BHj@RzBFj@@bF@nHFxGPpGHpCLpEFjFMdDc@|D]pBk@~B{A|Dg@`AsB|C_EjEuGhGuDzC_BjAyFvDeGdDaC~@sA`@sAXuATuANoDJwAAuAGoEk@cCq@_A[iCiAaBaAgCmBsAoB_@y@cAsDs@}A[e@aAiAaAs@eAa@w@SeBW{AIsDUuCk@gCi@_Ee@cBOmBIsEOcCC_EAmELsCXgCd@_APwA`@wBt@mNjFqG`Cyd@hQyF|BqJnEaHhDyLvFkLjFkDbBoB|@_FlCgCtAeD~AoIvDeBr@oBn@mNfFmE|AwD|A}DjByCxAuHxDy@^{BvAgCnBqApAiAjAsCvDaBxBwAvAaC~AkAh@sAl@oBpA}ClCwAbAyAp@mA\}APg@BcBACA_DWmAMwAIyA@{@FcBZg@PsAj@eHxDiDlC{B`CyApB{DzGmBpCmAhAsBrAkChAoSrIyOxGwBr@{B^y@HgMb@eDVkC`@{EdAsBb@y@RQCeALOBaA@g@Im@Ym@e@[]s@c@e@ES@UF]Ra@j@Qv@Ah@LfAL`@pA~Ch@|AnGvO^|@FFPRz@xBlBlFvAlDRf@Nb@vD|Jl@`BlBzFhBfHn@vCz@hFv@bIT|B|@rGnCxM|AhI`G|Xf@bCNdAfC|K^|AH`@HXVfAXnA|BpKd@fCfF`WzA~GnBtGdApD`@fBZjBRlBXhFb@pMJnBPlBv@zEp@bCp@jBnBbEnBzDpAdDp@dCj@~CXtCNxEGfE{B|h@UpF]tCa@rC_@hByAvEqAzCeAnBgBxDiA`CiAhCa@|Aq@fBi@fBc@hBk@fDoAhIwE|Ve@dBk@bBe@fASZMNg@Nc@^c@\gAx@gAx@u@f@a@`@[b@Yn@Qp@M~@Ez@@v@RtBb@`Br@zAz@nAbAfAdA|@nAt@h@\t@X`JdFfD|BpAbA|B~Bl@t@nBdCzAtBbAnAzAvBhA`Ch@rAb@|A`@lBRdAhA~GhB`LVbA^jAzDxIpBnE`AzAdDhFbC`FbD|GhEhItCvFnBpDbEnHbDnF~B`DrDtE~@lArBxBRVN@RN`Av@rFfDnA`A`@d@x@pA`@dAb@bBPbBPrDTxEFpCEdAYbBk@|BiGvYi@zCmAdGeK~h@qAxGmAhFw@`Du@fDkE|SeBnIoAxFkAvE_A`E_BbI_BlHcBbI]~A]lCe@dCCt@gBpHoBhIkDq@gFeB[WMMg@bBo@fB
+  </p>
+    </div>
+    <ul></ul>
+  <h2>Polyline to GPX file</h2>
+  {% if params.error %}
+  <p class=error>
+  <strong>Error:</strong>
+  {{ params.error }}
+  </p>
+  {% endif %}
+  <form action="{{ url_for('index') }}" method=post>
+
+  Polyline:</br>
+  {#<input type=text name=polyline value={% if params.polyline %}{{params.polyline}}{% endif%}><br/>#}
+  <textarea name=polyline rows=20 cols=140>{% if params.polyline %}{{params.polyline}}{% endif %}</textarea><br/>
+  <input type=submit name='button' value=Convert>
+  <input type=submit name='button' value=Download><br/>
+
+  </form>
+  {% if params.gpx %}
+  <div class=gpx>
+      <strong>GPX file:</strong>
+      <pre> {{ params.gpx }} </pre>
+  </div>
+  {% endif %}
