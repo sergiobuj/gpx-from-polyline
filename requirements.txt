@@ -1,4 +1,4 @@
-Flask==0.10.1
+Flask==1.0
 gunicorn==19.5.0
 polyline==1.1
 gpxpy==0.9.8
